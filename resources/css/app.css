@@ -1,0 +1,251 @@
+/* ===============================
+   DROPDOWN MENU ANIMASI
+================================ */
+.dropdown-menu {
+    transition: all 0.3s ease;
+    transform-origin: top;
+}
+
+.dropdown-menu.show {
+    animation: dropdownFade 0.3s ease;
+}
+
+@keyframes dropdownFade {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Animasi hover untuk item dropdown */
+.dropdown-item {
+    transition: background-color 0.3s ease, padding-left 0.3s ease;
+}
+
+.dropdown-item:hover {
+    background-color: rgb(207, 207, 207);
+    padding-left: 1.5rem;
+}
+
+/* ===============================
+   HERO SECTION
+================================ */
+.hero {
+    background-image: url('/img/bg.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 90vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    text-align: center;
+    position: relative;
+}
+
+.hero-overlay {
+    position: absolute;
+    inset: 0;
+    background-color: rgba(0, 0, 0, 0.4);
+}
+
+.hero-content {
+    position: relative;
+    z-index: 1;
+    padding: 20px;
+}
+
+/* Animasi load teks selamat datang */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(40px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.hero-content p,
+.hero-content h1 {
+    opacity: 0;
+    animation: fadeInUp 1s ease forwards;
+}
+
+.hero-content p:nth-child(1) {
+    animation-delay: 0.3s;
+}
+.hero-content h1 {
+    animation-delay: 0.6s;
+}
+.hero-content p:nth-child(3) {
+    animation-delay: 0.9s;
+}
+
+/* ===============================
+   TEKS RATA KIRI-KANAN
+================================ */
+.text-justify {
+    text-align: justify;
+}
+
+/* ===============================
+   BATAS WILAYAH
+================================ */
+.bataswilayah {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 1rem;
+    max-width: 900px;
+    overflow-x: auto;
+}
+
+.bataswilayah > div {
+    flex: 1 1 45%;
+    max-width: 150%;
+    min-width: 150px;
+    padding: 1rem;
+    text-align: center;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    background-color: #31bd46;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+    transition: all 0.3s ease;
+}
+
+.bataswilayah > div:hover {
+    transform: translateY(-5px) scale(1.03);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+    background-color: #2ca53e;
+    cursor: pointer;
+}
+
+.potensi-card {
+    display: inline-block;
+    position: relative;
+}
+
+.potensi-img {
+    width: 80px;
+    height: 80px;
+    object-fit: cover;
+    cursor: pointer;
+}
+
+/* Balon dialog */
+.overlay-info {
+    position: absolute;
+    bottom: calc(100% + 10px); /* Jarak 10px di atas foto */
+    left: 50%;
+    transform: translateX(-50%);
+    background: rgba(0, 0, 0, 0.85);
+    color: #fff;
+    padding: 8px 12px;
+    border-radius: 8px;
+    font-size: 12px;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s ease, transform 0.3s ease;
+    white-space: nowrap;
+    z-index: 10;
+}
+
+/* Panah kecil di bawah balon */
+.overlay-info::after {
+    content: "";
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    border-width: 6px;
+    border-style: solid;
+    border-color: rgba(0, 0, 0, 0.85) transparent transparent transparent;
+}
+
+/* Hover muncul */
+.potensi-card:hover .overlay-info {
+    opacity: 1;
+    transform: translateX(-50%) translateY(-3px);
+}
+
+/* Bungkus ikon notifikasi supaya badge posisinya relatif ke ikon */
+.notification-wrapper {
+    position: relative;
+    display: inline-block;
+}
+
+.notification-wrapper .notification-badge {
+    position: absolute;
+    top: -6px;       /* geser ke atas */
+    right: -6px;     /* geser ke kanan */
+    background-color: red;
+    color: white;
+    font-size: 12px;
+    font-weight: bold;
+    border-radius: 50%;
+    width: 20px;
+    height: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    line-height: 1;
+}
+
+ /* Panah carousel lebih jelas */
+    .carousel-control-prev-icon,
+    .carousel-control-next-icon {
+        background-color: rgba(0,0,0,0.7);
+        border-radius: 50%;
+        padding: 12px;
+    }
+    .bg-light {
+    background: linear-gradient(135deg, #f8f9fa, #e9ecef);
+}
+
+            /* Kalender lebih kecil */
+                #calendar {
+                    font-size: 0.85rem;
+                }
+                .fc-toolbar-title {
+                    font-size: 1rem !important;
+                    font-weight: 600;
+                }
+                .fc-daygrid-day-number {
+                    font-size: 0.75rem;
+                }
+                /* Warna event */
+                .fc-event {
+                    background-color: #0d6efd !important;
+                    border: none !important;
+                    font-size: 0.7rem;
+                    padding: 2px;
+                }
+                .fc .fc-daygrid-day.fc-day-today {
+                    background-color: rgba(13,110,253,0.15) !important; /* highlight hari ini */
+                }
+                
+.statistik-item {
+        transition: all 0.3s ease;
+    }
+
+    .statistik-item:hover {
+        transform: translateY(-5px) scale(1.03);
+        box-shadow: 0 6px 16px rgba(0,0,0,0.15);
+        background-color: #f8f9fa; /* sedikit berbeda biar keliatan */
+    }
+
+.service-card {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            border-radius: 1rem;
+        }
+        .service-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 1rem 2rem rgba(0,0,0,0.2);
+        }
